@@ -1,0 +1,42 @@
+# Server settings for all servers
+P4USER=user
+SERVICE_USER=uservice
+
+# File format:
+# SERVER_NAME:VAR:VAL
+
+# Master server settings
+# SERVER_TYPE = (server, commit-server)
+MASTER:SERVER_TYPE=server
+MASTER:PORT=localhost:9876
+MASTER:ROOT=/Users/h/Desktop/workdocs/Federated/replica_2/master_root
+MASTER:SERVER_NAME=Server2
+MASTER:LOG=log
+MASTER:DEBUG=3
+MASTER:MONITOR=2
+# UNICODE=1 unicode mode
+MASTER:UNICODE=0
+# Path to p4d
+MASTER:BINARY=/usr/local/bin/perforce/p15.2/p4d
+
+
+
+# Replica server settings the shared replica
+# Set for edge-server,replica,forwarding-replica,build-server
+REPLICA7:MASTER_NAME=MASTER
+# SERVER_TYPE = (edge-server, replica, forwarding-replica, build-server)
+REPLICA7:SERVER_TYPE=replica
+REPLICA7:PORT=localhost:7777
+REPLICA7:ROOT=/Users/h/Desktop/workdocs/Federated/replica_2/replica_root
+REPLICA7:SERVER_NAME=Replica7
+REPLICA7:LOG=log
+REPLICA7:DEBUG=3
+REPLICA7:MONITOR=2
+# UNICODE=1 unicode mode
+REPLICA7:UNICODE=0
+# Path to p4d
+REPLICA7:BINARY=/usr/local/bin/perforce/p15.2/p4d
+REPLICA7:PULL_INTERVAL=1
+REPLICA7:DB_REPLICATION=readonly
+#LBR_REPLICATION = cached
+REPLICA7:LBR_REPLICATION=readonly

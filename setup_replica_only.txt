@@ -1,0 +1,14 @@
+sh ~/bin/setup_replica setup_replicas_only_replica MASTER setup
+sh ~/bin/setup_replica setup_replicas_only_replica REPLICA7 setup
+
+
+p4 -p 9876 -uusuper user -o -f alice | p4 -p 9876 -uusuper user -i
+p4 -p 9876 -uusuper user -o -f hmackiernan | p4 -p 9876 -uusuper user -i
+p4 -p 9876 -uusuper protect -i < protect.txt
+p4 -p 9876 -uusuper branch -i < main2dev_branch.txt
+p4 -p 9876 client -i < alice_client.txt
+p4 -p 9876 -uusuper server -o Server2 | p4 -p 9876 -uusuper server -i
+sleep 10
+
+
+p4 -p 9876  -uusuper depot -t unload -o unl | p4 -p 9876 -uusuper  depot -i

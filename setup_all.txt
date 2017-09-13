@@ -1,0 +1,13 @@
+sh ~/bin/setup_replica setup_replicas MASTER setup
+sh ~/bin/setup_replica setup_replicas REPLICA3 setup
+sh ~/bin/setup_replica setup_replicas REPLICA4 setup
+sh ~/bin/setup_replica setup_replicas REPLICA5 setup
+sh ~/bin/setup_replica setup_replicas REPLICA6 setup
+
+p4 -p 9876 -uusuper user -o -f alice | p4 -p 9876 -uusuper user -i
+p4 -p 9876 -uusuper protect -i < protect.txt
+p4 -p 9876 -uusuper branch -i < main2dev_branch.txt
+p4 -p 9876 client -i < alice_client.txt
+sleep 10
+p4 -p 3333 client -i < alice_edge3.txt
+p4 -p 4444 client -i < alice_edge4.txt

@@ -1,0 +1,3 @@
+sh ~/bin/setup_replica setup_replicas MASTER restart
+sh ~/bin/setup_replica setup_replicas REPLICA3 restart
+sh ~/bin/setup_replica setup_replicas REPLICA4 restart

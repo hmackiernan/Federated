@@ -1,0 +1,16 @@
+sh ~/bin/setup_replica setup_replicas20142 MASTER setup
+sh ~/bin/setup_replica setup_replicas20142 REPLICA3 setup
+#sh ~/bin/setup_replica setup_replicas20142 REPLICA4 setup
+
+
+p4 -p 9876 -uusuper user -o -f alice | p4 -p 9876 -uusuper user -i
+p4 -p 9876 -uusuper protect -i < protect.txt
+p4 -p 9876 -uusuper branch -i < main2dev_branch.txt
+p4 -p 9876 client -i < alice_client.txt
+p4 -p 9876 configure set server.allowpush=2
+p4 -uusuper -p 9876 remote -i < commitRemote8888_remote.txt
+
+sleep 10
+p4 -p 3333 client -i < alice_edge3.txt
+#p4 -uusuper -p 3333 remote -i <  edgeRemote8888_remote.txt
+#p4 -p 4444 client -i < alice_edge4.txt

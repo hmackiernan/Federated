@@ -1,0 +1,3 @@
+sh ~/bin/setup_replica setup_replicas_rplmodes MASTER restart
+sh ~/bin/setup_replica setup_replicas_rplmodes REPLICA3 restart
+sh ~/bin/setup_replica setup_replicas_rplmodes REPLICA4 restart

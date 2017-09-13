@@ -1,0 +1,127 @@
+# Server settings for all servers
+P4USER=user
+SERVICE_USER=uservice
+
+# File format:
+# SERVER_NAME:VAR:VAL
+
+# Master server settings
+# SERVER_TYPE = (server, commit-server)
+MASTER:SERVER_TYPE=commit-server
+MASTER:PORT=localhost:9876
+MASTER:ROOT=/Users/h/Desktop/workdocs/Federated/replica_2/master_root
+MASTER:SERVER_NAME=CommitServer2
+MASTER:LOG=log
+MASTER:DEBUG=3
+MASTER:MONITOR=2
+# UNICODE=1 unicode mode
+MASTER:UNICODE=0
+# Path to p4d
+MASTER:BINARY=/usr/local/bin/perforce/p16.2/p4d
+
+# Replica server settings
+# Set for edge-server,replica,forwarding-replica,build-server
+REPLICA3:MASTER_NAME=MASTER
+# SERVER_TYPE = (edge-server, replica, forwarding-replica, build-server)
+REPLICA3:SERVER_TYPE=edge-server
+REPLICA3:PORT=localhost:3333
+REPLICA3:ROOT=/Users/h/Desktop/workdocs/Federated/replica_2/edge3_root
+REPLICA3:SERVER_NAME=EdgeServer3
+REPLICA3:LOG=log
+REPLICA3:DEBUG=3
+REPLICA3:MONITOR=2
+# UNICODE=1 unicode mode
+REPLICA3:UNICODE=0
+# Path to p4d
+REPLICA3:BINARY=/usr/local/bin/perforce/p16.2/p4d
+REPLICA3:PULL_INTERVAL=5
+REPLICA3:DB_REPLICATION=readonly
+# LBR_REPLICATION = (readonly,ondemand,none)
+REPLICA3:LBR_REPLICATION=readonly
+
+
+# Replica server settings the 'Slow' Replica
+# Set for edge-server,replica,forwarding-replica,build-server
+REPLICA4:MASTER_NAME=MASTER
+# SERVER_TYPE = (edge-server, replica, forwarding-replica, build-server)
+REPLICA4:SERVER_TYPE=edge-server
+REPLICA4:PORT=localhost:4444
+REPLICA4:ROOT=/Users/h/Desktop/workdocs/Federated/replica_2/edge4_root
+REPLICA4:SERVER_NAME=EdgeServer4
+REPLICA4:LOG=log
+REPLICA4:DEBUG=3
+REPLICA4:MONITOR=2
+# UNICODE=1 unicode mode
+REPLICA4:UNICODE=0
+# Path to p4d
+REPLICA4:BINARY=/usr/local/bin/perforce/p16.2/p4d
+REPLICA4:PULL_INTERVAL=5
+REPLICA4:DB_REPLICATION=readonly
+# LBR_REPLICATION = (readonly,ondemand,none)
+REPLICA4:LBR_REPLICATION=readonly
+
+
+
+# Replica server settings the shared replica
+# Set for edge-server,replica,forwarding-replica,build-server
+REPLICA5:MASTER_NAME=MASTER
+# SERVER_TYPE = (edge-server, replica, forwarding-replica, build-server)
+REPLICA5:SERVER_TYPE=replica
+REPLICA5:PORT=localhost:5555
+REPLICA5:ROOT=/Users/h/Desktop/workdocs/Federated/replica_2/forwarding-root
+REPLICA5:SERVER_NAME=Replica5
+REPLICA5:LOG=log
+REPLICA5:DEBUG=3
+REPLICA5:MONITOR=2
+# UNICODE=1 unicode mode
+REPLICA5:UNICODE=0
+# Path to p4d
+REPLICA5:BINARY=/usr/local/bin/perforce/p16.2/p4d
+REPLICA5:PULL_INTERVAL=1
+REPLICA5:DB_REPLICATION=readonly
+#LBR_REPLICATION = cached
+REPLICA5:LBR_REPLICATION=readonly
+
+
+
+# Replica server settings the shared replica
+# Set for edge-server,replica,forwarding-replica,build-server
+REPLICA6:MASTER_NAME=MASTER
+# SERVER_TYPE = (edge-server, replica, forwarding-replica, build-server)
+REPLICA6:SERVER_TYPE=build-server
+REPLICA6:PORT=localhost:6666
+REPLICA6:ROOT=/Users/h/Desktop/workdocs/Federated/replica_2/build-root
+REPLICA6:SERVER_NAME=BuildServer6
+REPLICA6:LOG=log
+REPLICA6:DEBUG=3
+REPLICA6:MONITOR=2
+# UNICODE=1 unicode mode
+REPLICA6:UNICODE=0
+# Path to p4d
+REPLICA6:BINARY=/usr/local/bin/perforce/p16.2/p4d
+REPLICA6:PULL_INTERVAL=1
+REPLICA6:DB_REPLICATION=readonly
+#LBR_REPLICATION = cached
+REPLICA6:LBR_REPLICATION=readonly
+
+
+
+# Replica server settings the shared replica
+# Set for edge-server,replica,forwarding-replica,build-server
+REPLICA7:MASTER_NAME=MASTER
+# SERVER_TYPE = (edge-server, replica, forwarding-replica, build-server)
+REPLICA7:SERVER_TYPE=replica
+REPLICA7:PORT=localhost:7777
+REPLICA7:ROOT=/Users/h/Desktop/workdocs/Federated/replica_2/replica-root
+REPLICA7:SERVER_NAME=Repliaca7
+REPLICA7:LOG=log
+REPLICA7:DEBUG=3
+REPLICA7:MONITOR=2
+# UNICODE=1 unicode mode
+REPLICA7:UNICODE=0
+# Path to p4d
+REPLICA7:BINARY=/usr/local/bin/perforce/p16.2/p4d
+REPLICA7:PULL_INTERVAL=1
+REPLICA7:DB_REPLICATION=readonly
+#LBR_REPLICATION = cached
+REPLICA7:LBR_REPLICATION=readonly

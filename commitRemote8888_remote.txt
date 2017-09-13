@@ -1,0 +1,24 @@
+# A Perforce Remote Specification.
+#
+#  RemoteID:    The remote identifier.
+#  Address:     The P4PORT used by the remote server.
+#  Description: A short description of the remote server (optional).
+#  Update: The date this remote was last used to fetch or push.
+#  LastFetch: The last changelist that was fetched.
+#  LastPush: The last changelist that was pushed.
+#  DepotMap:    Lines to map local files to remote files.
+
+RemoteID:	commitRemote8888
+Address: localhost:8888
+Description:
+	Created by h.
+
+Update:	1969/12/31 19:00:00
+
+LastFetch:	default
+
+LastPush:	default
+
+DepotMap:
+	//... //...
+

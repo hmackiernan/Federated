@@ -1,0 +1,9 @@
+rm -rf master_root
+mkdir master_root
+rm -rf edge3_root
+mkdir edge3_root
+rm -rf edge4_root
+mkdir edge4_root
+
+rm -rf replica_root
+mkdir replica_root

@@ -1,0 +1,4 @@
+
+sh ~/bin/setup_replica setup_replicas REPLICA5 setup
+sh ~/bin/setup_replica setup_replicas REPLICA6 setup
+

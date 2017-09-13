@@ -1,0 +1,6 @@
+p4 -uusuper -p 9876 admin stop;
+p4 -uusuper -p 3333 admin stop;
+p4 -uusuper -p 4444 admin stop;
+p4 -uusuper -p 5555 admin stop;
+p4 -uusuper -p 6666 admin stop;
+p4 -uusuper -p 7777 admin stop;
